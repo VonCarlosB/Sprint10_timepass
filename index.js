@@ -1,0 +1,12 @@
+const express = require('express');
+const index = express.Router();
+
+index.get('/index', (req, res) => {
+    res.send(`
+        <h1>Bienvenido al Challenge U2S10</h1>
+        <h3>${req.dateType}</h3>
+        <a href="/endroute"><button>Validar hora</button></a>
+    `)
+})
+
+module.exports = index
