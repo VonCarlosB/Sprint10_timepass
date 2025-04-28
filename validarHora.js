@@ -1,5 +1,6 @@
-const validarHora = (hour) => {
-    if(hour > 12) return true
+const validarHora = () => {
+    const now = new Date().getHours()
+    if(now >= 12) return true
     else return false
 }
 
