@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
 
-const index = require('./index')
-const endroute = require('./endroute')
-const horaMiddleware = require('./horaMiddleware')
+const index = require('./routes/index.js')
+const endroute = require('./routes/endroute.js')
+const horaMiddleware = require('./middleware/horaMiddleware.js')
 
 app.use(horaMiddleware)
-app.use('/', index, endroute)
+app.use('/', index)
+app.use('/endroute', endroute)
 
 app.use((req, res) => {
     res.status(404).send(`<h1>Page not found</h1><a href="/">Home<a>`)
